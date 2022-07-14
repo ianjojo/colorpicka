@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Colorpicka</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <form id="picker">
+          <div class="colorbox">
+            <input type="color" id="colorpicker" />
+          </div>
+          <select name="colors" id="colors">
+            <option value="monochrome">Monochrome</option>
+            <option value="monochrome-dark">Monochrome-dark</option>
+            <option value="monochrome-light">Monochrome-light</option>
+            <option value="analogic">Analogic</option>
+            <option value="complement">Complement</option>
+            <option value="analogic-complement">Analogic-Complement</option>
+            <option value="triad">Triad</option>
+          </select>
+          <button class="get" id="get">Get Color Scheme</button>
+        </form>
+      </div>
+      <div class="colors">
+        <div id="color1" class="color1 swatch"></div>
+        <div id="color2" class="color2 swatch"></div>
+        <div id="color3" class="color3 swatch"></div>
+        <div id="color4" class="color4 swatch"></div>
+        <div id="color5" class="color5 swatch"></div>
+      </div>
+      <div class="colorsinfo">
+        <div id="colorinfo1" class="color1 info"></div>
+        <div id="colorinfo2" class="color2 info"></div>
+        <div id="colorinfo3" class="color3 info"></div>
+        <div id="colorinfo4" class="color4 info"></div>
+        <div id="colorinfo5" class="color5 info"></div>
+      </div>
+      <script src="index.js"></script>
+    </div>
+  </body>
+</html>

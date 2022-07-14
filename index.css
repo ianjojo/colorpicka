@@ -1,0 +1,54 @@
+.container {
+  width: 550px;
+}
+
+#picker {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+#colorpicker {
+  height: 45px;
+  width: 61px;
+}
+button {
+  padding: 13px 11px;
+  background: white;
+  cursor: pointer;
+}
+
+select {
+  width: 312px;
+  font-size: 18px;
+  padding: 11px 5px;
+}
+
+.colors {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 550px;
+}
+.colorsinfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 550px;
+}
+
+.swatch {
+  display: flex;
+  justify-content: center;
+  width: 110px;
+
+  height: 500px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  width: 110px;
+  cursor: pointer;
+  height: 500px;
+}
