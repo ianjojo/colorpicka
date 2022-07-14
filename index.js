@@ -8,6 +8,8 @@ let colormode = "";
 const colorInput = document.getElementById("colorpicker");
 const colorModeInput = document.getElementById("colors");
 
+getScheme();
+
 colorInput.addEventListener("change", (e) => {
   scheme = e.target.value;
 
