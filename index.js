@@ -27,7 +27,7 @@ async function getScheme() {
     `https://www.thecolorapi.com/scheme?hex=${newscheme}&mode=${colormode}`
   );
   myScheme = await res.json();
-  console.log(myScheme);
+
   // update swatches with returned five colours
   document.getElementById("color1").style.backgroundColor =
     myScheme.colors[0].hex.value;
