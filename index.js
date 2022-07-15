@@ -7,18 +7,28 @@ let colormode = "";
 
 const colorInput = document.getElementById("colorpicker");
 const colorModeInput = document.getElementById("colors");
+const copyEl = document.getElementById("overlay");
 
 getScheme();
 
-colorInput.addEventListener("change", (e) => {
+// colorInput.addEventListener("change", (e) => {
+//   scheme = e.target.value;
+
+//   // remove the '#' symbol
+//   newscheme = scheme.slice(1);
+//   getScheme();
+// });
+colorInput.addEventListener("input", (e) => {
   scheme = e.target.value;
 
   // remove the '#' symbol
   newscheme = scheme.slice(1);
+  getScheme();
 });
 
 colorModeInput.addEventListener("change", (e) => {
   colormode = e.target.value;
+  getScheme();
 });
 
 async function getScheme() {
@@ -30,12 +40,16 @@ async function getScheme() {
   // update swatches with returned five colours
   document.getElementById("color1").style.backgroundColor =
     myScheme.colors[0].hex.value;
+
   document.getElementById("color2").style.backgroundColor =
     myScheme.colors[1].hex.value;
+
   document.getElementById("color3").style.backgroundColor =
     myScheme.colors[2].hex.value;
+
   document.getElementById("color4").style.backgroundColor =
     myScheme.colors[3].hex.value;
+
   document.getElementById("color5").style.backgroundColor =
     myScheme.colors[4].hex.value;
 
@@ -52,23 +66,85 @@ async function getScheme() {
        ${myScheme.colors[4].hex.value}`;
 }
 
+document.getElementById("color1").addEventListener("click", () => {
+  colorInput.value = `${myScheme.colors[0].hex.value}`;
+  scheme = myScheme.colors[0].hex.value;
+  getScheme();
+});
+document.getElementById("color2").addEventListener("click", () => {
+  colorInput.value = `${myScheme.colors[1].hex.value}`;
+  scheme = myScheme.colors[1].hex.value;
+  newscheme = scheme.slice(1);
+  getScheme();
+});
+document.getElementById("color3").addEventListener("click", () => {
+  colorInput.value = `${myScheme.colors[2].hex.value}`;
+  scheme = myScheme.colors[2].hex.value;
+  newscheme = scheme.slice(1);
+  getScheme();
+});
+document.getElementById("color4").addEventListener("click", () => {
+  colorInput.value = `${myScheme.colors[3].hex.value}`;
+  scheme = myScheme.colors[3].hex.value;
+  newscheme = scheme.slice(1);
+  getScheme();
+});
+document.getElementById("color5").addEventListener("click", () => {
+  colorInput.value = `${myScheme.colors[4].hex.value}`;
+  scheme = myScheme.colors[4].hex.value;
+  newscheme = scheme.slice(1);
+  getScheme();
+});
+
 document.getElementById("picker").addEventListener("submit", (e) => {
   e.preventDefault();
   getScheme();
 });
 
 document.getElementById("colorinfo1").addEventListener("click", () => {
+  let color1backup = document.getElementById("colorinfo1").innerText;
   navigator.clipboard.writeText(colorinfo1.innerText);
+  showCopied();
 });
 document.getElementById("colorinfo2").addEventListener("click", () => {
   navigator.clipboard.writeText(colorinfo2.innerText);
+  showCopied();
 });
 document.getElementById("colorinfo3").addEventListener("click", () => {
   navigator.clipboard.writeText(colorinfo3.innerText);
+  showCopied();
 });
 document.getElementById("colorinfo4").addEventListener("click", () => {
   navigator.clipboard.writeText(colorinfo4.innerText);
+  showCopied();
 });
 document.getElementById("colorinfo5").addEventListener("click", () => {
   navigator.clipboard.writeText(colorinfo5.innerText);
+  showCopied();
 });
+
+function showCopied() {
+  copyEl.classList.remove("hidden");
+  setTimeout(() => {
+    copyEl.classList.add("hidden");
+  }, 900);
+}
+
+const randomizeColor = () => {
+  // const randomColor = (Math.random() * 16777215).toString(16);
+
+  // colorInput.value = "#" + randomColor;
+
+  const letters = "0123456789ABCDEF".split("");
+  let color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.round(Math.random() * 15)];
+  }
+
+  scheme = color;
+  newscheme = scheme.slice(1);
+  getScheme();
+  colorInput.value = color;
+};
+
+document.getElementById("random").addEventListener("click", randomizeColor);
