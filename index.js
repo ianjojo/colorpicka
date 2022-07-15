@@ -27,22 +27,36 @@ async function getScheme() {
     `https://www.thecolorapi.com/scheme?hex=${newscheme}&mode=${colormode}`
   );
   myScheme = await res.json();
-
+  console.log(myScheme);
   // update swatches with returned five colours
   document.getElementById("color1").style.backgroundColor =
     myScheme.colors[0].hex.value;
+  document.getElementById(
+    "color1"
+  ).innerHTML = `<p class="label">${myScheme.colors[0].name.value}</p>`;
 
   document.getElementById("color2").style.backgroundColor =
     myScheme.colors[1].hex.value;
+  document.getElementById(
+    "color2"
+  ).innerHTML = `<p class="label">${myScheme.colors[1].name.value}</p>`;
 
   document.getElementById("color3").style.backgroundColor =
     myScheme.colors[2].hex.value;
+  document.getElementById(
+    "color3"
+  ).innerHTML = `<p class="label">${myScheme.colors[2].name.value}</p>`;
 
   document.getElementById("color4").style.backgroundColor =
     myScheme.colors[3].hex.value;
-
+  document.getElementById(
+    "color4"
+  ).innerHTML = `<p class="label">${myScheme.colors[3].name.value}</p>`;
   document.getElementById("color5").style.backgroundColor =
     myScheme.colors[4].hex.value;
+  document.getElementById(
+    "color5"
+  ).innerHTML = `<p class="label">${myScheme.colors[4].name.value}</p>`;
 
   // update text swatches with hex codes of five colours
   document.getElementById("colorinfo1").innerText = `
