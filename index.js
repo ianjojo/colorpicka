@@ -11,17 +11,8 @@ const copyEl = document.getElementById("overlay");
 
 getScheme();
 
-// colorInput.addEventListener("change", (e) => {
-//   scheme = e.target.value;
-
-//   // remove the '#' symbol
-//   newscheme = scheme.slice(1);
-//   getScheme();
-// });
 colorInput.addEventListener("input", (e) => {
   scheme = e.target.value;
-
-  // remove the '#' symbol
   newscheme = scheme.slice(1);
   getScheme();
 });
@@ -127,14 +118,10 @@ function showCopied() {
   copyEl.classList.remove("hidden");
   setTimeout(() => {
     copyEl.classList.add("hidden");
-  }, 900);
+  }, 400);
 }
 
 const randomizeColor = () => {
-  // const randomColor = (Math.random() * 16777215).toString(16);
-
-  // colorInput.value = "#" + randomColor;
-
   const letters = "0123456789ABCDEF".split("");
   let color = "#";
   for (var i = 0; i < 6; i++) {
