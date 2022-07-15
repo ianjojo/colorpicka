@@ -80,7 +80,9 @@ select {
 .colorsinfo {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  width: 550px;
+  width: 548px;
+  border: 1px solid black;
+  margin-bottom: 20px;
 }
 
 .swatch {
@@ -97,7 +99,10 @@ select {
   justify-content: center;
   width: 110px;
   cursor: pointer;
-  height: 50px;
+  height: 40px;
+  padding-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .info:hover {
@@ -128,7 +133,7 @@ span {
 
 .label {
   background: white;
-  border: 1px solid black;
+  // border: 1px solid black;
   font-size: 10px;
   margin-bottom: -20px;
   padding: 2px;
